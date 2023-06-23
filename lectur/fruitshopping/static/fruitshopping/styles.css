@@ -1,0 +1,27 @@
+h1 {
+    font-family: sans-serif;
+    font-size: 90px;
+    text-align: center;
+}
+
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+  }
+  table, td, th {
+      border: 2px solid #aaa;
+      text-align: center;
+      
+  }
+  table{
+    text-align: center;
+  }
+  form{
+    margin:10px;
+    border:3px;
+    text-align: center;
+    font-size:50;
+    scale: 1.4;
+  }
+  
