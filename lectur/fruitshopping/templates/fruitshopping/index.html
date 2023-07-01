@@ -1,15 +1,13 @@
+{% extends "fruitshopping/layout.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Hello</title>
-        <link rel="stylesheet" href="{% static 'fruitshopping/styles.css' %}">
-    </head>
-    <body>
-        <h1>Hello, World!</h1>
 
+{% block body %}
+        <h1>Hello, World!</h1>
+        <a href="{% url 'shop:add' %}"></">Add a new task</a>
         {% for item in items  %}
         <li>{{item}}</li>
+        {% empty %}
+        <li> No items </li>
         {% endfor %}
-    </body>
-</html>
+        
+{% endblock body %}

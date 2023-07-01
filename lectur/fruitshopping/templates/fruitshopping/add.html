@@ -1,0 +1,13 @@
+{% extends "fruitshopping/layout.html" %}
+{% load static %}
+
+{% block body %}
+<h1> Add item </h1>
+<form action="{% url 'shop:add' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+    <a href="{% url 'shop:index' %}">view page</a>
+</form>
+
+{% endblock body %}
