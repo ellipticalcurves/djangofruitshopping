@@ -4,8 +4,8 @@
 {% block body %}
         <h1>Hello, World!</h1>
         <a href="{% url 'shop:add' %}"></">Add a new task</a>
-        {% for item in items  %}
-        <li>{{item}}</li>
+        {% for item in items %}
+        <li>{{ item }}</li>
         {% empty %}
         <li> No items </li>
         {% endfor %}

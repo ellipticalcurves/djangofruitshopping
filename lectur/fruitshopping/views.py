@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-items = []#"apple", "banana", "watermelon"]
+#items = []#"apple", "banana", "watermelon"]
 
 class NewItemForm(forms.Form):
     item = forms.CharField(label="New Item")
@@ -17,7 +17,7 @@ def index(request):
         request.session["items"] = []
     return render(request,
                    "fruitshopping/index.html",
-                   {"items":items} # variable name in htnl template | value
+                   {"items":request.session["items"]} # variable name in htnl template | value
                    ) 
 
 
@@ -26,7 +26,7 @@ def add(request):
         form = NewItemForm(request.POST)
         if form.is_valid():
             item = form.cleaned_data["item"]
-            items.append(item)
+            request.session["items"] += [item]
             return HttpResponseRedirect(reverse("shop:index"))
         else:
             return render(request,
